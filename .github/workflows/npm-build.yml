@@ -14,7 +14,7 @@ jobs:
       JF_URL: https://${{ vars.JF_URL }}/
     defaults:
       run:
-        working-directory: ./npm/
+        working-directory: ./
 
     steps:
       # This action checks out the code from the repository
