@@ -19,6 +19,9 @@ jobs:
       # This action checks out the code from the repository
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          repository: "eyaldelarea/jfrog-cli"
+          ref: "job_summaries"
 
       # Download the JFrog CLI and configure using JFrog Project and OIDC provider 
       - uses: jfrog/setup-jfrog-cli@v4
