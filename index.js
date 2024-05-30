@@ -13,6 +13,7 @@ const User = require("./model/user");
  */
 const app = express();
 const port = process.env.PORT || "3000";
+const password = 'blah1234'
 /**
  *  App Configuration
  */
