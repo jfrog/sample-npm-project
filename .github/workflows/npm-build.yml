@@ -54,6 +54,9 @@ jobs:
       # Publish the BuildInfo into Artifactory 
       - run: |
           jf rt build-publish ghdemo-npm-sample-build  1.0.${{github.run_number}}
+      # Run JF Scan on Build 
+      - run: |
+          jf scan
       # Scan the NPM Build with Xray 
       - run: |
            jf build-scan ghdemo-npm-sample-build  1.0.${{github.run_number}}
