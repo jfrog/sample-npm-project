@@ -42,9 +42,6 @@ jobs:
       # NPM Install using the CLI  
       - run: |
           jf npm install --build-name=ghdemo-npm-sample-build --build-number=1.0.${{github.run_number}}
-      # Test Upload 
-      - run: |
-          jf rt upload .
       # Add GitHub Data to BuildInfo 
       - run: |
           jf rt build-add-git ghdemo-npm-sample-build  1.0.${{github.run_number}}
