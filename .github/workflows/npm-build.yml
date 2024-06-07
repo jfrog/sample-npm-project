@@ -48,9 +48,6 @@ jobs:
       # Collect all Environmental information for NPM Build 
       - run: |
           jf rt build-collect-env ghdemo-npm-sample-build  1.0.${{github.run_number}}
-      # Using JF Upload for Packages 
-      - run: |
-          jf rt upload ghdemo-npm-sample-build  1.0.${{github.run_number}}
       # Using NPM Publish to uplaod the NPM Build
       - run: |
           jf npm publish --build-name=ghdemo-npm-sample-build  --build-number=1.0.${{github.run_number}}
@@ -59,7 +56,7 @@ jobs:
           jf rt build-publish ghdemo-npm-sample-build  1.0.${{github.run_number}}
       # Run JF Scan on Build 
       - run: |
-          jf scan ghdemo-npm-sample-build  1.0.${{github.run_number}}
+          jf scan .
       # Scan the NPM Build with Xray 
       - run: |
            jf build-scan ghdemo-npm-sample-build  1.0.${{github.run_number}}
